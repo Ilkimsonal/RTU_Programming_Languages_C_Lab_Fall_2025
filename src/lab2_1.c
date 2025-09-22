@@ -2,7 +2,7 @@
 
 /*
     Task:
-    Write a function `int sum_to_n(int n)` that computes
+    Write a function int sum_to_n(int n) that computes
     the sum of all integers from 1 up to n using a for loop.
 
     In main():
@@ -12,17 +12,25 @@
 */
 
 int sum_to_n(int n) {
-    // TODO: implement sum with a for loop
-    return 0; // placeholder
+  int sum = 0;
+  for (int i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 int main(void) {
-    int n;
+  int n;
 
-    printf("Enter a positive integer n: ");
-    scanf("%d", &n);
+  printf("Enter a positive integer n: ");
+  scanf("%d", &n);
 
-    // TODO: validate input, call function, and print result
+  if (n < 1) {
+    printf("Error: n must be >= 1\n");
+  } else {
+    int result = sum_to_n(n);
+    printf("Sum 1..%d = %d\n", n, result);
+  }
 
-    return 0;
+  return 0;
 }
